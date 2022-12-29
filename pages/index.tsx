@@ -10,42 +10,6 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <h1 className='text-xl font-main font-bold'>Hello World</h1>
-      <p className=''>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, unde molestias corrupti
-        nisi quasi ut facere, alias amet omnis eligendi ipsa necessitatibus. Sunt tempore voluptate
-        corporis, nostrum fugit ullam magni, at distinctio ipsam veniam similique esse aperiam
-        culpa, perspiciatis eveniet non tempora dignissimos saepe nihil voluptatibus. Ipsa nihil
-        quam, neque vero explicabo nesciunt quas cum rem corporis, necessitatibus dolore qui harum
-        consequuntur aliquid quasi dolorum! Commodi debitis iusto harum consectetur veniam accusamus
-        aliquam mollitia, rerum et repudiandae vero nesciunt fugiat deleniti dolores sequi nulla.
-        Atque quas rerum perferendis quae non soluta eligendi sit consequatur explicabo, sequi
-        reiciendis nam magni ratione ipsum quasi exercitationem quam cumque consequuntur
-        necessitatibus omnis laborum similique officia. Impedit, veniam? Doloribus asperiores error
-        similique sed ipsam iusto, tempore voluptate sapiente illo sunt cupiditate vel eveniet
-        architecto debitis inventore quaerat delectus, quisquam totam quo porro atque reiciendis
-        laudantium at labore! Repudiandae hic illum, corporis unde numquam voluptate. Et sit eaque
-        ea eos. Fuga explicabo ut esse voluptates eius omnis, eos doloribus temporibus, molestias
-        assumenda aperiam quae vel iste quis nisi porro enim consequatur numquam voluptatibus, sit
-        quia? Nihil consequuntur iusto, corrupti nisi rerum fugiat placeat consectetur obcaecati,
-        voluptatum facere ut aspernatur aut quis culpa labore natus explicabo excepturi commodi ad
-        vitae tenetur provident quas amet. Obcaecati recusandae ipsa minima explicabo, magnam ut
-        fuga dolorem harum nam hic repellat fugit perferendis laudantium sint mollitia nisi quasi
-        voluptatum libero? Fugit nulla facere quia ipsa dolorum sed incidunt, facilis neque labore
-        dignissimos minus corrupti obcaecati eaque adipisci accusantium hic expedita id repellat
-        impedit animi. Voluptatum natus eveniet ab delectus id repellat dignissimos magni iste. Qui
-        est quisquam nobis, aspernatur quaerat eligendi doloremque dolorum. Alias corporis nostrum,
-        nulla iure, asperiores, quo nihil natus vitae quaerat doloremque dolorum magnam? Saepe a
-        consequuntur, in quo iure ad alias quidem sed eum cum id quod fugiat odio obcaecati.
-        Corporis sit nobis placeat iure aliquid sint tenetur fugiat, ratione animi, minima, quis
-        ducimus iusto aperiam doloremque! Libero, nesciunt vero, iste necessitatibus ex aliquid
-        deleniti, possimus atque obcaecati consequuntur aut consectetur rem laborum maxime nisi ad
-        ipsam quas. Reiciendis repudiandae velit porro ad aut ducimus illum aperiam. Deleniti
-        mollitia nesciunt molestiae, libero sint, praesentium nobis accusantium saepe eaque fugiat
-        cum blanditiis placeat maxime distinctio. Eveniet vero non tempore quod. Facere a autem
-        dolores tenetur illo iste distinctio amet optio odio, debitis voluptatem, aspernatur
-        delectus numquam quia, molestiae aperiam ea magni. Animi eius repellendus praesentium
-        voluptate eum quisquam!
-      </p>
     </>
   );
 }
