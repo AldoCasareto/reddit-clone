@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useRecoilState } from 'recoil';
 import { authModalState } from '../../../atoms/authModalAtom';
+import AuthInputs from './AuthInputs';
 
 type Props = {};
 
@@ -54,33 +55,7 @@ const AuthModal = (props: Props) => {
                   <span className='flex-shrink mx-4 text-gray-400 text-xs font-bold'>OR</span>
                   <div className='flex-grow border-t border-gray-200'></div>
                 </div>
-                <div className='flex flex-col items-center border-slate-200 rounded-b'>
-                  <input
-                    className='border p-2 bg-gray-100 text-gray-400  text-xs border-gray-100 rounded-full my-2 w-full'
-                    placeholder='Username'
-                  />
-                  <input
-                    className='border p-2 bg-gray-100 text-gray-400  text-xs border-gray-100 rounded-full my-2 w-full'
-                    placeholder='Password'
-                  />
-                </div>
-                <div className='my-4'>
-                  <p className='text-xs'>
-                    Forget your <span className='text-cyan-600 underline font-bold'>username</span>{' '}
-                    or <span className='text-cyan-600 underline font-bold'>password</span>?
-                  </p>
-                </div>
-                <div>
-                  <button className='border text-white p-2 text-xs bg-orange-600 border-gray-100 w-full rounded-full'>
-                    Log in
-                  </button>
-                </div>
-                <div className='mt-6'>
-                  <p className='text-xs'>
-                    New to Reddit?{' '}
-                    <span className='text-cyan-600 underline font-bold'> Sign-up</span>
-                  </p>
-                </div>
+                <AuthInputs />
               </div>
             </div>
           </div>

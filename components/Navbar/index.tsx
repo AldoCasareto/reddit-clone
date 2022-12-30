@@ -1,5 +1,5 @@
 import React from 'react';
-import RightSideNav from './rightSideIcons';
+import RightSideNav from './rightSideContent';
 import SearchBar from './SearchBar';
 
 type Props = {};
