@@ -7,43 +7,79 @@ type Props = {};
 const AuthModal = (props: Props) => {
   const [modalState, setModalState] = useRecoilState(authModalState);
 
+  const titles = {
+    login: 'Log in',
+    signup: 'Sign Up',
+    resetPassword: 'Reset Password',
+  };
+
+  const ModalTitle = () => titles[modalState.view] || '';
+
   return (
     <>
       {modalState.open ? (
         <>
-          <div className='justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none'>
-            <div className='relative w-auto my-6 mx-auto max-w-3xl'>
-              {/*content*/}
-              <div className='border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none'>
-                {/*header*/}
-                <div className='flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t'>
-                  <h3 className='text-3xl font-semibold'>Modal Title</h3>
+          <div className='flex justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none'>
+            <div className='py-20 px-10 max-w-lg l'>
+              <div className='rounded-lg shadow-lg py-20 px-10 relative flex flex-col w-full bg-white outline-none focus:outline-none'>
+                <button
+                  className='text-gray-500 background-transparent font-bold uppercase px-1 py-1 text-sm outline-none focus:outline-none ease-linear transition-all duration-150 absolute top-2 right-2 hover:text-gray-300'
+                  type='button'
+                  onClick={() => setModalState((prev) => ({ ...prev, open: false }))}
+                >
+                  X
+                </button>
+                <div className='flex items-start justify-between rounded-t'>
+                  <h3 className='text-lg mb-1'>{ModalTitle()}</h3>
                 </div>
-                {/*body*/}
-                <div className='relative p-6 flex-auto'>
-                  <p className='my-4 text-slate-500 text-lg leading-relaxed'>
-                    I always felt like I could do anything. That’s the main thing people are
-                    controlled by! Thoughts- their perception of themselves! They're slowed down by
-                    their perception of themselves. If you're taught you can’t do anything, you
-                    won’t do anything. I was taught I could do everything.
+                <div className=''>
+                  <p className=' text-slate-500 text-xs leading-tight'>
+                    By continuing, you agree are setting up a Reddit account and agree to our{' '}
+                    <span className='text-cyan-600 '>User Agreement</span> and{' '}
+                    <span className='text-cyan-600 '>Privacy Policy.</span>
                   </p>
                 </div>
-                {/*footer*/}
-                <div className='flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b'>
-                  <button
-                    className='text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150'
-                    type='button'
-                    onClick={() => setModalState((prev) => ({ ...prev, open: false }))}
-                  >
-                    Close
+                <div className='flex items-center mt-8 border-slate-200 rounded-b'>
+                  <button className='border p-2 text-sm border-gray-100 w-full rounded-full'>
+                    <img
+                      src='/images/googlelogo.png'
+                      alt='google-logo'
+                      className='w-4 fixed mr-3'
+                    />
+                    Login using Google
                   </button>
-                  {/* <button
-                    className='bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150'
-                    type='button'
-                    onClick={() => setShowModal(false)}
-                  >
-                    Save Changes
-                  </button> */}
+                </div>
+                <div className='relative flex my-6 items-center'>
+                  <div className='flex-grow border-t border-gray-200'></div>
+                  <span className='flex-shrink mx-4 text-gray-400 text-xs font-bold'>OR</span>
+                  <div className='flex-grow border-t border-gray-200'></div>
+                </div>
+                <div className='flex flex-col items-center border-slate-200 rounded-b'>
+                  <input
+                    className='border p-2 bg-gray-100 text-gray-400  text-xs border-gray-100 rounded-full my-2 w-full'
+                    placeholder='Username'
+                  />
+                  <input
+                    className='border p-2 bg-gray-100 text-gray-400  text-xs border-gray-100 rounded-full my-2 w-full'
+                    placeholder='Password'
+                  />
+                </div>
+                <div className='my-4'>
+                  <p className='text-xs'>
+                    Forget your <span className='text-cyan-600 underline font-bold'>username</span>{' '}
+                    or <span className='text-cyan-600 underline font-bold'>password</span>?
+                  </p>
+                </div>
+                <div>
+                  <button className='border text-white p-2 text-xs bg-orange-600 border-gray-100 w-full rounded-full'>
+                    Log in
+                  </button>
+                </div>
+                <div className='mt-6'>
+                  <p className='text-xs'>
+                    New to Reddit?{' '}
+                    <span className='text-cyan-600 underline font-bold'> Sign-up</span>
+                  </p>
                 </div>
               </div>
             </div>
