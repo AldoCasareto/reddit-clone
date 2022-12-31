@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useRecoilState } from 'recoil';
 import { authModalState } from '../../../atoms/authModalAtom';
 import AuthInputs from './AuthInputs';
+import SocialLogin from './SocialLogin';
 
 type Props = {};
 
@@ -40,16 +41,7 @@ const AuthModal = (props: Props) => {
                     <span className='text-cyan-600 '>Privacy Policy.</span>
                   </p>
                 </div>
-                <div className='flex items-center mt-8 border-slate-200 rounded-b'>
-                  <button className='border p-2 text-sm border-gray-100 w-full rounded-full'>
-                    <img
-                      src='/images/googlelogo.png'
-                      alt='google-logo'
-                      className='w-4 fixed mr-3'
-                    />
-                    Login using Google
-                  </button>
-                </div>
+                <SocialLogin />
                 <div className='relative flex my-6 items-center'>
                   <div className='flex-grow border-t border-gray-200'></div>
                   <span className='flex-shrink mx-4 text-gray-400 text-xs font-bold'>OR</span>
