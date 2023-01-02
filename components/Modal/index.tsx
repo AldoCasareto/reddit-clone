@@ -1,3 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
+import AuthModal from './Auth';
 
-export default function Modal() {}
+type Props = {};
+
+const Modal = (props: Props) => {
+  return <AuthModal />;
+};
+
+export default Modal;
