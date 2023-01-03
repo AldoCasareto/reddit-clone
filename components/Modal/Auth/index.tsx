@@ -19,7 +19,7 @@ const AuthModal = () => {
   const titles = {
     login: 'Log in',
     signup: 'Sign Up',
-    resetPassword: 'Reset Password',
+    resetPassword: 'Recover your details',
   };
 
   const ModalTitle = () => titles[modalState.view] || '';
@@ -42,18 +42,32 @@ const AuthModal = () => {
                   <h3 className='text-lg mb-1'>{ModalTitle()}</h3>
                 </div>
                 <div className=''>
-                  <p className=' text-slate-500 text-xs leading-tight'>
-                    By continuing, you agree are setting up a Reddit account and agree to our{' '}
-                    <span className='text-cyan-600 '>User Agreement</span> and{' '}
-                    <span className='text-cyan-600 '>Privacy Policy.</span>
-                  </p>
+                  {modalState.view === 'signup' && (
+                    <p className=' text-slate-500 text-xs leading-tight'>
+                      By continuing, you agree are setting up a Reddit account and agree to our{' '}
+                      <span className='text-cyan-600 '>User Agreement</span> and{' '}
+                      <span className='text-cyan-600 '>Privacy Policy.</span>
+                    </p>
+                  )}
+                  {modalState.view === 'resetPassword' && (
+                    <p className=' text-slate-500 text-xs leading-tight'>
+                      Tell us the email address associated with your Reddit account, and we’ll send
+                      you an email with your username.
+                    </p>
+                  )}
                 </div>
-                <SocialLogin />
-                <div className='relative flex my-6 items-center'>
-                  <div className='flex-grow border-t border-gray-200'></div>
-                  <span className='flex-shrink mx-4 text-gray-400 text-xs font-bold'>OR</span>
-                  <div className='flex-grow border-t border-gray-200'></div>
-                </div>
+                {modalState.view === 'login' ||
+                  (modalState.view === 'signup' && (
+                    <>
+                      {' '}
+                      <SocialLogin />
+                      <div className='relative flex my-6 items-center'>
+                        <div className='flex-grow border-t border-gray-200'></div>
+                        <span className='flex-shrink mx-4 text-gray-400 text-xs font-bold'>OR</span>
+                        <div className='flex-grow border-t border-gray-200'></div>
+                      </div>
+                    </>
+                  ))}
                 <AuthInputs />
               </div>
             </div>

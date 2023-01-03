@@ -39,7 +39,7 @@ const SignIn = () => {
       <input
         type='email'
         className='border p-3 bg-gray-100 text-gray-400 text-xs border-gray-100 rounded-full my-2 w-full'
-        placeholder='Username'
+        placeholder='email'
         value={formData.email}
         name='email'
         onChange={handleInputChange}
@@ -52,28 +52,36 @@ const SignIn = () => {
         name='password'
         onChange={handleInputChange}
       />
+      <p className='text-xs py-4'>
+        Forgot your{' '}
+        <span
+          onClick={() => setAuthModalState((prev) => ({ ...prev, view: 'resetPassword' }))}
+          className='text-cyan-600 underline font-bold cursor-pointer'
+        >
+          password
+        </span>
+        ?
+      </p>
       <p className='text-red-400 text-xs'>{getErrorMessage(error, signInError)}</p>
       <button
         type='submit'
         className='border p-3 bg-orange-600 text-white text-xs rounded-full my-2 w-full'
       >
-        Sign In
+        Log In
       </button>
       <div className='mt-6'>
         <p className='text-xs'>
           Not a redditor yet?{' '}
-          <span className='text-cyan-600 underline font-bold'>
-            <span
-              className='cursor-pointer'
-              onClick={() =>
-                setAuthModalState((prev) => ({
-                  ...prev,
-                  view: 'signup',
-                }))
-              }
-            >
-              Sign up
-            </span>
+          <span
+            className='cursor-pointer text-cyan-600 underline font-bold'
+            onClick={() =>
+              setAuthModalState((prev) => ({
+                ...prev,
+                view: 'signup',
+              }))
+            }
+          >
+            Sign up
           </span>
         </p>
       </div>

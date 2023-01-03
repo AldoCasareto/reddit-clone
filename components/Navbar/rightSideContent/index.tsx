@@ -5,11 +5,12 @@ import Modal from '../../Modal';
 import AuthButtons from './AuthButtons';
 import User from './User';
 
-type Props = {};
+type Props = {
+  user: any;
+};
 
-const RightSideNav = (props: Props) => {
-  const [user, loading, error] = useAuthState(auth);
-
+const RightSideNav = ({ user }: Props) => {
+  console.log(`user = `, user?.displayName);
   return (
     <>
       <Modal />
