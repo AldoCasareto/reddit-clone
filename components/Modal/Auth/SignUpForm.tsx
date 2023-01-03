@@ -94,7 +94,7 @@ const CreateUser = () => {
               }))
             }
           >
-            Sign Up
+            Log in
           </span>
         </p>
       </div>

@@ -7,7 +7,6 @@ type Props = {};
 const SocialLogin = (props: Props) => {
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
 
-  console.log(`foo = `, user);
   return (
     <div className='flex items-center mt-8 border-slate-200 rounded-b'>
       <button

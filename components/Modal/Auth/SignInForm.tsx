@@ -72,7 +72,7 @@ const SignIn = () => {
                 }))
               }
             >
-              Log In
+              Sign up
             </span>
           </span>
         </p>

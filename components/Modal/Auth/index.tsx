@@ -1,13 +1,20 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useRecoilState } from 'recoil';
 import { authModalState } from '../../../atoms/authModalAtom';
+import { auth } from '../../../firebase/clientApp';
 import AuthInputs from './AuthInputs';
 import SocialLogin from './SocialLogin';
 
-type Props = {};
-
-const AuthModal = (props: Props) => {
+const AuthModal = () => {
   const [modalState, setModalState] = useRecoilState(authModalState);
+  const [user, loading, error] = useAuthState(auth);
+
+  useEffect(() => {
+    if (user && modalState.open) {
+      setModalState((prev) => ({ ...prev, open: false }));
+    }
+  }, [user, modalState.open]);
 
   const titles = {
     login: 'Log in',

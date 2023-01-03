@@ -54,8 +54,6 @@ const AuthForm = ({ formType }: FormProps) => {
     });
   };
 
-  console.log(`foo = `, signInError);
-
   const getErrorMessage = () => {
     if (formType === 'signup') {
       return (

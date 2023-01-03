@@ -1,6 +1,17 @@
 import Head from 'next/head';
+import { auth } from '../firebase/clientApp';
 
 export default function Home() {
+  const signOut = () =>
+    auth
+      .signOut()
+      .then(() => {
+        console.log('User signed out.');
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+
   return (
     <>
       <Head>
@@ -9,7 +20,9 @@ export default function Home() {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <h1 className='text-xl font-main font-bold'>Hello World</h1>
+      <h1 onClick={signOut} className='text-xl font-main font-bold cursor-pointer'>
+        Hello World
+      </h1>
     </>
   );
 }

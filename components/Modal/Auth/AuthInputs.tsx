@@ -2,14 +2,21 @@ import React from 'react';
 import { useRecoilValue } from 'recoil';
 import { authModalState } from '../../../atoms/authModalAtom';
 import SignInForm from './SignInForm';
-import CreateUserForm from './CreateUserForm';
+import SignUpForm from './SignUpForm';
+import ResetForm from './ResetForm';
 
-type Props = {};
-
-const AuthInputs = (props: Props) => {
+const AuthInputs = () => {
   const modalState = useRecoilValue(authModalState);
 
-  return modalState.view === 'signup' ? <CreateUserForm /> : <SignInForm />;
+  const modalViews = {
+    login: SignInForm,
+    signup: SignUpForm,
+    resetPassword: ResetForm,
+  };
+
+  const ModalView = modalViews[modalState.view];
+
+  return <ModalView />;
 };
 
 export default AuthInputs;
