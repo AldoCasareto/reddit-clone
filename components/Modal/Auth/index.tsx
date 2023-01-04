@@ -56,18 +56,16 @@ const AuthModal = () => {
                     </p>
                   )}
                 </div>
-                {modalState.view === 'login' ||
-                  (modalState.view === 'signup' && (
-                    <>
-                      {' '}
-                      <SocialLogin />
-                      <div className='relative flex my-6 items-center'>
-                        <div className='flex-grow border-t border-gray-200'></div>
-                        <span className='flex-shrink mx-4 text-gray-400 text-xs font-bold'>OR</span>
-                        <div className='flex-grow border-t border-gray-200'></div>
-                      </div>
-                    </>
-                  ))}
+                {(modalState.view === 'login' || modalState.view === 'signup') && (
+                  <>
+                    <SocialLogin />
+                    <div className='relative flex my-6 items-center'>
+                      <div className='flex-grow border-t border-gray-200'></div>
+                      <span className='flex-shrink mx-4 text-gray-400 text-xs font-bold'>OR</span>
+                      <div className='flex-grow border-t border-gray-200'></div>
+                    </div>
+                  </>
+                )}
                 <AuthInputs />
               </div>
             </div>

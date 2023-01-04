@@ -11,8 +11,6 @@ const ResetForm = () => {
   const [error, setError] = useState('');
 
   const [sendPasswordResetEmail, sending, resetError] = useSendPasswordResetEmail(auth);
-
-  console.log(`sending = `, sending);
   const setAuthModalState = useSetRecoilState(authModalState);
 
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {

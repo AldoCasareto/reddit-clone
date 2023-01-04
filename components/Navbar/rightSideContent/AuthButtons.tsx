@@ -7,7 +7,7 @@ type Props = {};
 const AuthButtons = (props: Props) => {
   const setAuthModalState = useSetRecoilState(authModalState);
   return (
-    <div className='text-xs hidden md:block lg:block xl:block'>
+    <div className='text-xs hidden md:block'>
       <button
         onClick={() => setAuthModalState({ open: true, view: 'login' })}
         className='rounded-xl text-blue-600 border border-blue-600 px-2 py-1 mx-1 hover:text-blue-300'

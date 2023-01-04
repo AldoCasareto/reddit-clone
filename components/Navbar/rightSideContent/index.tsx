@@ -1,22 +1,24 @@
+import { User } from 'firebase/auth';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../../../firebase/clientApp';
 import Modal from '../../Modal';
 import AuthButtons from './AuthButtons';
-import User from './User';
+import Icons from './Icons';
+import UserDropDown from './User';
 
 type Props = {
-  user: any;
+  user?: User | null;
 };
 
 const RightSideNav = ({ user }: Props) => {
-  console.log(`user = `, user?.displayName);
   return (
     <>
       <Modal />
-      {user ? <div>hello {user.displayName?.split(' ')[0]}</div> : <AuthButtons />}
-
-      <User />
+      <div className='flex space-x-2 md:space-x-4'>
+        {user ? <Icons /> : <AuthButtons />}
+        <UserDropDown user={user} />
+      </div>
     </>
   );
 };
